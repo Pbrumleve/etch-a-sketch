@@ -4,11 +4,24 @@ body {
 }
 
 h1 {
-  margin: 0, 2em;
+  margin-top: 5px;
   display: flex;
   justify-content: center;
   background-color: rgb(48, 48, 48);
   color: aliceblue;
+}
+
+.button {
+  margin: 1em;
+  margin-top: -10px;
+  display: flex;
+  justify-content: center;
+}
+
+button{
+    font-size: 44px;
+    padding: 5px;
+    border-radius: 6px;
 }
 
 .outerContainer {
@@ -20,7 +33,7 @@ h1 {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   border: 1px solid black;
-  height: 90vh;
+  height: 85vh;
   aspect-ratio:  1 / 1;
 }
 

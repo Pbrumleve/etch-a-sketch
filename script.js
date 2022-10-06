@@ -1,7 +1,7 @@
-const container = document.querySelector('.container');
+let container = document.querySelector('.container');
 
 for (let i = 0; i < 256; i++) {
-  const li = document.createElement('div');
+  let li = document.createElement('div');
   li.classList.add('grid');
   li.classList.add('whiteOne');
   li.setAttribute('id', `square-${i+1}`);
@@ -9,7 +9,6 @@ for (let i = 0; i < 256; i++) {
 }
 
 const squares = document.querySelectorAll('.grid');
-
 squares.forEach((div) => {
   div.addEventListener('mouseover', toggleColor)
 })
@@ -51,3 +50,37 @@ function toggleColor() {
     return;
   }
 }
+
+function remakeGrid() {
+  let sideLengthString = prompt('How many squares per side?', '');
+  let sideLength = Number(sideLengthString);
+  let row;
+  let column;
+  if (Number.isInteger(sideLength) && 0 < sideLength <= 100) {
+    while (container.firstChild) {
+      container.removeChild(container.lastChild);
+    }
+    for (let i = 0; i < sideLength; i++) {
+      row = document.createElement('div');
+      row.classList.add('row');
+      row.setAttribute('id', sideLength * i);
+      container.appendChild(row);
+    }
+    const rows = document.querySelectorAll('.row');
+    rows.forEach((row) => {
+      for (let i = 0; i < sideLength; i++) {
+        column = document.createElement('div');
+        column.classList.add('grid');
+        column.classList.add('whiteOne');
+        column.setAttribute('id', `square-${i+1+Number(row.id)}`)
+        row.appendChild(column);
+      }
+    })
+  } else {
+    return alert(`Please try again with an integer between 1 and 100.\nOtherwise, the game might not work.`)
+  }
+}
+
+function square(x) {
+    return (x * x);
+  }
