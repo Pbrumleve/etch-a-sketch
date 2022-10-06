@@ -11,7 +11,7 @@ h1 {
   color: aliceblue;
 }
 
-.outer-container {
+.outerContainer {
   display: flex;
   justify-content: center;
 }
@@ -26,5 +26,48 @@ h1 {
 
 .grid {
   border: 1px solid black;
+}
+
+.whiteOne {
   background-color: white;
+}
+
+.whiteTwo {
+  background-color: rgb(230, 230, 230);
+}
+
+.whiteThree {
+  background-color: rgb(205, 205, 205);
+}
+
+.whiteFour {
+  background-color: rgb(180, 180, 180);
+}
+
+.whiteFive {
+  background-color: rgb(155, 155, 155);
+}
+
+.grey {
+  background-color: rgb(130, 130, 130);
+}
+
+.blackFive {
+  background-color: rgb(105, 105, 105);
+}
+
+.blackFour {
+  background-color: rgb(80, 80, 80);
+}
+
+.blackThree {
+  background-color: rgb(55, 55, 55);
+}
+
+.blackTwo {
+  background-color: rgb(27, 27, 27);
+}
+
+.blackOne {
+  background-color: black;
 }
