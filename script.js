@@ -1,20 +1,19 @@
-let container = document.querySelector('.container');
-
 for (let i = 0; i < 256; i++) {
+  let container = document.querySelector('.container');
   let li = document.createElement('div');
   li.classList.add('grid');
   li.classList.add('whiteOne');
   li.setAttribute('id', `square-${i+1}`);
   container.appendChild(li);
-}
-
-const squares = document.querySelectorAll('.grid');
+  const squares = document.querySelectorAll('.grid');
 squares.forEach((div) => {
   div.addEventListener('mouseover', toggleColor)
 })
+}
 
 function remakeGrid() {
-  let sideLengthString = prompt('How many squares per side?', '');
+  let container = document.querySelector('.container');
+  let sideLengthString = prompt('Please choose how many squares per side?', '');
   if (sideLengthString === null) {
     return;
   } else {
@@ -31,15 +30,18 @@ function remakeGrid() {
           container.appendChild(li);
         }
       document.getElementById("box").style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
+      const squares = document.querySelectorAll('.grid');
+      squares.forEach((div) => {
+        div.addEventListener('mouseover', toggleColor)
+      })
     } else {
-      return alert(`Please try again with an integer between 1 and 100.\nOtherwise, the game might not work.`)
+      return alert(`Please, enter an integer between 1 and 100.\nOtherwise, the game might not work.`)
     }
   }
 }
 
 function toggleColor() {
   let squareColor = this.classList;
-  console.log(squareColor);
   if (squareColor.contains('whiteOne')) {
     squareColor.remove('whiteOne');
     return squareColor.add('whiteTwo');
