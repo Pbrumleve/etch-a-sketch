@@ -33,11 +33,12 @@ button{
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   border: 1px solid black;
-  height: 85vh;
+  height: 83vh;
   aspect-ratio:  1 / 1;
 }
 
 .grid {
+  display: block;
   border: 1px solid black;
 }
 
